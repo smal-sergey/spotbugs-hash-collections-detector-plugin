@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindbugsPlugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="findbugsplugin.xsd"
+        pluginid="com.smalser.spotbugs.hash-collections-checker">
+
+    <Detector class="com.smalser.spotbugs.HashCollectionElementDetector"
+              reports="HC_MISSING_EQUALS_HASHCODE"/>
+    <BugPattern type="HC_MISSING_EQUALS_HASHCODE"
+                abbrev="HC"
+                category="CORRECTNESS"
+                priority="2"
+                description="Class used in hash-based collection without equals/hashCode"
+                detail="This class is inserted into a HashSet/HashMap but does not override both equals and hashCode."/>
+</FindbugsPlugin>

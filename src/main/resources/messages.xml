@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MessageCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:noNamespaceSchemaLocation="messagecollection.xsd">
+
+    <Plugin>
+        <ShortDescription>My SpotBugs Plugin</ShortDescription>
+        <Details>This plugin provides original detectors</Details>
+    </Plugin>
+
+    <Detector class="com.smalser.spotbugs.HashCollectionElementDetector">
+        <Details>
+            Original detector to detect MY_BUG bug pattern.
+        </Details>
+    </Detector>
+
+    <BugPattern type="HC_MISSING_EQUALS_HASHCODE"
+                abbrev="HC"
+                category="CORRECTNESS"
+                priority="2"
+                description="Class used in hash-based collection without equals/hashCode"
+                detail="This class is inserted into a HashSet/HashMap but does not override both equals and hashCode.">
+        <ShortDescription>Class used in hash-based collection without equals/hashCode</ShortDescription>
+        <LongDescription>This class is inserted into a HashSet/HashMap but does not override both equals and hashCode.</LongDescription>
+        <Details>
+            <![CDATA[
+    <p>Explain existing problem in code, and how developer should improve their implementation.</p>
+    ]]>
+        </Details>
+    </BugPattern>
+
+      <BugCode abbrev="HC">My SpotBugs BugCode for hashcode/equals problem</BugCode>
+</MessageCollection>
