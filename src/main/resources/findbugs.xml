@@ -5,6 +5,7 @@
 
     <Detector class="com.smalser.spotbugs.HashCollectionElementDetector"
               reports="HC_MISSING_EQUALS_HASHCODE"/>
+    <BugCode abbrev="HC">My SpotBugs BugCode for hashcode/equals problem</BugCode>
     <BugPattern type="HC_MISSING_EQUALS_HASHCODE"
                 abbrev="HC"
                 category="CORRECTNESS"

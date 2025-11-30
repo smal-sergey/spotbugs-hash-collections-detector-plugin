@@ -104,7 +104,7 @@ public class HashCollectionElementDetector extends BytecodeScanningDetector impl
                     String genericClass = elementSig.substring(1, elementSig.length() - 1).replace('/', '.');
                     if (!hasEqualsAndHashCode(genericClass)) {
                         bugReporter.reportBug(new BugInstance(this,
-                                "HC_MISSING_EQUALS_HASHCODE", NORMAL_PRIORITY)
+                                "HC_MISSING_EQUALS_HASHCODE", HIGH_PRIORITY)
                                 .addClass(currentClass)
                                 .addString("Element type " + genericClass +
                                         " used in hash-based collection without equals/hashCode"));

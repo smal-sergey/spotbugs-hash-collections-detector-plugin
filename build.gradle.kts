@@ -39,7 +39,34 @@ dependencies {
     // Force platform alignment
     testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.10.0")
     testRuntimeOnly("org.junit.platform:junit-platform-engine:1.10.0")
+
+    spotbugsPlugins(files(layout.buildDirectory.file("libs/SpotBugsHashCollectionsDetector-1.0-SNAPSHOT.jar")))
 }
+
+spotbugs {
+    toolVersion.set(spotbugsVersion)
+    ignoreFailures.set(false)
+    effort.set(com.github.spotbugs.snom.Effort.MAX)
+    reportLevel.set(com.github.spotbugs.snom.Confidence.HIGH)
+}
+
+tasks.spotbugsMain {
+    reports {
+        create("html") {
+            required.set(true)
+            outputLocation.set(layout.buildDirectory.file("reports/spotbugs/main.html"))
+        }
+    }
+}
+tasks.spotbugsTest {
+    reports {
+        create("html") {
+            required.set(true)
+            outputLocation.set(layout.buildDirectory.file("reports/spotbugs/test.html"))
+        }
+    }
+}
+
 
 tasks.test {
     dependsOn(tasks.classes)

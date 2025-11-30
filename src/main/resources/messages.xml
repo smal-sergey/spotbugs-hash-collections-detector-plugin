@@ -9,10 +9,10 @@
 
     <Detector class="com.smalser.spotbugs.HashCollectionElementDetector">
         <Details>
-            Original detector to detect MY_BUG bug pattern.
+            Original detector to detect HC_MISSING_EQUALS_HASHCODE bug pattern.
         </Details>
     </Detector>
-
+    <BugCode abbrev="HC">My SpotBugs BugCode for hashcode/equals problem</BugCode>
     <BugPattern type="HC_MISSING_EQUALS_HASHCODE"
                 abbrev="HC"
                 category="CORRECTNESS"
@@ -27,6 +27,4 @@
     ]]>
         </Details>
     </BugPattern>
-
-      <BugCode abbrev="HC">My SpotBugs BugCode for hashcode/equals problem</BugCode>
 </MessageCollection>
